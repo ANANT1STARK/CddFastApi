@@ -28,6 +28,7 @@ CLASS_MAPPING_PATH = os.getenv("CLASS_MAPPING_PATH")
 
 model = load_model(MODEL_PATH)
 
+print(f"Loaded model from {MODEL_PATH}")
 with open(CLASS_MAPPING_PATH, "r") as f:
     class_mapping = {int(k): v for k, v in json.load(f).items()}
 
@@ -121,6 +122,6 @@ async def predict(file: UploadFile = File(...)):
     return db_result
 
 
-@app.get("/")
+@app.get("/")   
 def health_check():
     return {"status": "ok", "message": "Cashew disease detection API is running"}
