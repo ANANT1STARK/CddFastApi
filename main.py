@@ -32,7 +32,7 @@ print(f"Loaded model from {MODEL_PATH}")
 with open(CLASS_MAPPING_PATH, "r") as f:
     class_mapping = {int(k): v for k, v in json.load(f).items()}
 
-CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.50"))
+CONFIDENCE_THRESHOLD = float(os.getenv("CONFIDENCE_THRESHOLD", "0.70"))
 
 # ---- MongoDB connection ----
 MONGO_URI = os.getenv("MONGO_URI")
